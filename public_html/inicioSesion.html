@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ingreso al sistema del colegio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/sesion.css">
+        <link href='http://fonts.googleapis.com/css?family=Pinyon+Script' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <form id="formIngreso" action="">
+            <h1>Inicio de sesión</h1>
+            <input id="correoElectronico" type="email" placeholder="sucorreo@test.com" required/>
+            <input type="password" placeholder="Contraseña" required/>
+            <button type="submit" onclick="clickeable()">Ingresar</button>
+            <button type="reset">Limpiar</button>
+        </form>
+        
+        <script type="text/javascript">
+            function clickeable(){
+                var emailElectronico=document.forms["formIngreso"].elements[0].value;
+                switch(emailElectronico){
+                        case "profesor@liferay.com":
+                            alert('Ingresando como profesor...');
+                            document.forms["formIngreso"].action="./profesor.html";
+                        break;
+                        
+                        case "estudiante@liferay.com":
+                            alert('Ingresando como estudiante...');
+                            document.forms["formIngreso"].action="./estudiante.html";
+                        break;
+                        
+                        default:
+                            alert('Los datos ingresados no son validos, verifique su contraseña o nombre de usuario');
+                }
+            }
+        </script>
+    </body>
+</html>
